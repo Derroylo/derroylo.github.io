@@ -1,3 +1,0 @@
-# PHP
-
-Work in progress

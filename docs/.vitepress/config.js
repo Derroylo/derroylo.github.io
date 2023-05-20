@@ -19,7 +19,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide' },
+      { text: 'Guide', link: '/guide', activeMatch: '/guide/' },
       { text: 'Reference', link: '/reference' },
     ],
 
@@ -30,23 +30,46 @@ export default defineConfig({
           items: [
             { text: 'What is GPT?', link: '/guide' },
             { text: 'Installation', link: '/guide/install' },
+            { text: 'Development', link: '/guide/develop' },
           ]
         },
         {
           text: 'Usage',
           items: [
-            { text: 'PHP', link: '/guide/usage/php' },
-            { text: 'Services', link: '/guide/usage/services' },
+            { text: 'General', link: '/guide/usage' },
+            { 
+              text: 'Commands', 
+              items: [
+                { text: 'Update', link: '/guide/usage/commands/update' },
+                { text: 'Configuration', link: '/guide/usage/commands/config' },
+                { text: 'PHP', link: '/guide/usage/commands/php' },
+                { text: 'NodeJS', link: '/guide/usage/commands/nodejs' },
+                { text: 'Apache', link: '/guide/usage/commands/apache' },
+                { text: 'MySQL', link: '/guide/usage/commands/mysql' },
+                { text: 'Services', link: '/guide/usage/commands/services' },
+              ]
+            }
           ]
         },
         {
           text: 'Extensions',
           items: [
             { text: 'Extend GPT', link: '/guide/extensions' },
-            { text: 'Shopware', link: '/guide/extensions/shopware' },
-            { text: 'Oxid', link: '/guide/extensions/oxid' },
-            { text: 'Sulu', link: '/guide/extensions/sulu' },
-            { text: 'Symfony', link: '/guide/extensions/symfony' },
+            {
+              text: 'Extension Examples',
+              items: [
+                { text: 'Shopware', link: '/guide/extensions/shopware' },
+                { text: 'Oxid', link: '/guide/extensions/oxid' },
+                { text: 'Sulu', link: '/guide/extensions/sulu' },
+                { text: 'Symfony', link: '/guide/extensions/symfony' },
+              ]
+            }
+          ]
+        },
+        {
+          text: 'Database / Live Data',
+          items: [
+            { text: 'Live Database', link: '/guide/database' },
           ]
         }
       ],
