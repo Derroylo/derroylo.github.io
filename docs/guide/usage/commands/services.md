@@ -12,6 +12,8 @@ With the command `gpt services select` you can select the services you want to s
 
 ![GPT Services Select](./../../../assets/images/gpt_services_select.jpg)
 
+***Note***: You may have noticed that the services are split into different categories, this done via a lable in the `docker-compose.yml` file. The label is called `com.gitpod.gpt.category` and an example can be seen [here](https://github.com/Derroylo/shopware-workspace-sample/blob/main/docker-compose.yml)
+
 You can select/deselect the services you want to set active with the spacebar. After you have selected the services you want to start, you can press enter to save the selection. The selected services will be saved in the `.gpt.yml` file and will be used the next time you start the workspace.
 
 ## Start services

@@ -75,9 +75,9 @@ export default defineConfig({
       ],
       "/reference": [
         {
-          text: 'gpt.yml',
+          text: 'Reference',
           items: [
-            { text: 'GPT config', link: '/reference' },
+            { text: 'gpt.yml', link: '/reference' },
           ]
         },
       ]
