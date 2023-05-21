@@ -10,8 +10,6 @@ With the command `gpt php version` you can see the current PHP Version.
 ## Selecting a PHP Version
 With the command `gpt php select` you can select a PHP Version from the list of available PHP Versions. The list is generated from the PHP Versions that are installed in the workspace. 
 
-![GPT PHP Version](./../../../assets/images/gpt_php_version2.jpg)
-
 After you have selected a new PHP Version, it will be saved in the `.gpt.yml` file and will be used the next time you start the workspace.
 The selected version will be saved in the `.gpt.yml` file and will be used the next time you start the workspace.
 
