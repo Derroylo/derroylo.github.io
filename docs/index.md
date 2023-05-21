@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "GPT Documentation"
+  name: "GPT"
   text: "a tool for Gitpod"
   #tagline: My great project tagline
   actions:

@@ -19,7 +19,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide', activeMatch: '/guide/' },
+      { text: 'Guide', link: '/guide/index', activeMatch: '/guide/' },
       { text: 'Reference', link: '/reference' },
     ],
 
@@ -28,7 +28,7 @@ export default defineConfig({
         {
           text: 'Introduction',
           items: [
-            { text: 'What is GPT?', link: '/guide' },
+            { text: 'What is GPT?', link: '/guide/index' },
             { text: 'Installation', link: '/guide/install' },
             { text: 'Development', link: '/guide/develop' },
           ]
