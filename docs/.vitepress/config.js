@@ -20,7 +20,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/index', activeMatch: '/guide/' },
-      { text: 'Reference', link: '/reference' },
+      { text: 'Reference', link: '/reference/index' },
     ],
 
     sidebar: {
@@ -77,7 +77,16 @@ export default defineConfig({
         {
           text: 'Reference',
           items: [
-            { text: 'gpt.yml', link: '/reference' },
+            {
+              text: 'gpt.yml',
+              items: [
+                { text: 'Config', link: '/reference/config' },
+                { text: 'PHP', link: '/reference/php' },
+                { text: 'Services', link: '/reference/services' },
+                { text: 'NodeJS', link: '/reference/nodejs' },
+                { text: 'Shellscripts', link: '/reference/shell-scripts' },
+              ]
+            }
           ]
         },
       ]
