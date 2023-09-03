@@ -60,7 +60,7 @@ echo "alias gpt='$HOME/.gpt/gpt.sh'" > .bashrc.d/gitpod-tool
 After you have installed GPT, following the infos above, you should be able to type `gpt` in your terminal and get a response.
 
 ## What is the purpose of the gpt.sh script?
-You might wonder why gpt isn´t executed directly but instead is started via a shell script. There are multiple reasons for that. One is that GPT can´t be updated while it is running and also we want to see sometimes the output of commands like `docker-compose up` which is not that easy with C# and will not work reliable, at least to my knowledge.
+You might wonder why GPT isn´t executed directly but instead is started via a shell script. There are multiple reasons for that. One is that GPT can´t be updated while it is running and also we want to see sometimes the output of commands like `docker-compose up` which is not that easy with C# and will not work reliable, at least to my knowledge.
 
 ## Common Problems
 ### Access denied

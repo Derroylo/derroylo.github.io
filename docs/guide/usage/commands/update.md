@@ -2,6 +2,9 @@
 
 The purpose of the update command is to install the latest version of GPT if there is a newer version available. GPT itself will check every 4 hours if there is a new version available and inform you.
 
-::: warning
-Since GPT is currently installed in the user directory, it is not persistent. This means that if you update GPT, you will have to do it again after each restart of the workspace.
+::: info
+In older versions, downloading a new version of GPT needed to be done after every workspace restart. This has been changed in Version 0.4 where the new version will be moved to the workspace folder, so it will be saved and can be reused after a restart.
 :::
+
+## Pre-Release Versions
+If you want to test versions that are not ready yet for productive usage, you can activate it with a settings in the `.gpt.yml` file. [See reference](/reference/config.html)
