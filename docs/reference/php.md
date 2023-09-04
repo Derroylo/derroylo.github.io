@@ -64,4 +64,14 @@ php:
         max_execution_time: 0
         memory_limit: 0
 ```
-  
+
+### packages <Badge type="info" text="since v0.4.0" />
+If you want to install additional packages, you can add them here and they will be installed via the `gpt restore php` command.
+
+Example:
+```yaml:line-numbers {1}
+php:
+  packages:
+  - php8.0-curl
+  - php8.0-zip
+```

@@ -8,10 +8,15 @@ With the command `gpt php version` you can see the current PHP Version.
 ![GPT PHP Version](./../../../assets/images/gpt_php_version1.jpg)
 
 ## Selecting a PHP Version
-With the command `gpt php select` you can select a PHP Version from the list of available PHP Versions. The list is generated from the PHP Versions that are installed in the workspace. 
+::: danger
+Since v0.4.0 the command `gpt php select` is no longer available
+:::
 
-After you have selected a new PHP Version, it will be saved in the `.gpt.yml` file and will be used the next time you start the workspace.
-The selected version will be saved in the `.gpt.yml` file and will be used the next time you start the workspace.
+With the same command as above, `gpt php version`, you can not only see the current active version but also you will get asked if you want to change it. Answer the question with `y` and the following list will be shown:
+
+![GPT PHP Version](./../../../assets/images/gpt_php_version2.jpg)
+
+Use the arrow keys to select the new version and press enter. GPT will now switch to the new version. Additionally it will be saved in the `.gpt.yml` file and will be used the next time you start the workspace.
 
 ## Changing a PHP Setting
 With the command `gpt php ini set <setting> <value>` you can change a PHP Setting. The setting will be saved in the `.gpt.yml` file and directly applied.
@@ -19,7 +24,11 @@ With the command `gpt php ini set <setting> <value>` you can change a PHP Settin
 ![GPT PHP Version](./../../../assets/images/gpt_php_ini_set1.jpg)
 
 ## Restoring PHP Settings
-With the command `gpt php restore` the selected PHP Version and Settings will be restored. This command should be executed within your ´.gitpod.yml`. As example, you can see the following `.gitpod.yml` file:
+::: info
+With release v0.4.0 there is a new command that restores all settings
+:::
+
+With the command `gpt php restore` the selected PHP Version and Settings will be restored. This command should be executed within your `.gitpod.yml`. As example, you can see the following `.gitpod.yml` file:
 
 ```yaml:line-numbers {1}
 tasks:

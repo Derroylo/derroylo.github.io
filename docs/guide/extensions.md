@@ -3,9 +3,9 @@
 ## How does it work?
 GPT can be extended via shell scripts. This means it scans a certain directory and looks for *.sh files.
 
-::: info
-In one of the next releases additional directories can be specified.
-:::
+## Locations
+
+The default folder GPT scans for extensions is the `.devEnv/gitpod/scripts` folder. Since version 0.4.0 you can also define additional folders that will be included in the scan. Check the [Reference section](/reference/shell-scripts) to see on how this can be done.
 
 ## Advantage
 While most systems have a build-in console with commands, you may need to add custom shell scripts that execute cronjobs, init your system (composer install, npm/yarn install etc.), run tests, load demo data or do some stuff after a branch change. So after a while you might have a dozen of these scripts and while for some developers it might be easy to identify which script does what, not all of them know it. Another thing is that your scripts might use arguments, so that you need to take a look inside the script to check which it has and for what purpose.
