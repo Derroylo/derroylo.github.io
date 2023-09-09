@@ -3,7 +3,7 @@
 The purpose of the update command is to install the latest version of GPT if there is a newer version available. GPT itself will check every 4 hours if there is a new version available and inform you.
 
 ::: info
-In older versions, downloading a new version of GPT needed to be done after every workspace restart. This has been changed in Version 0.4 where the new version will be moved to the workspace folder, so it will be saved and can be reused after a restart.
+Versions prior 0.4.1 had an error in the update script which prevented that an update could be made to GPT. The program says the update has been successful even if it wasn´t. If you installed GPT within the workspace image, then it is the easiest way to rebuild the workspace image. This can be easy done by calling the url given in the [Gitpod documentation](https://www.gitpod.io/docs/configure/workspaces/workspace-image#manually-rebuild-a-workspace-image)
 :::
 
 ## Pre-Release Versions <Badge type="info" text="since v0.4.0" />
