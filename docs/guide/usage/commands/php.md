@@ -23,6 +23,46 @@ With the command `gpt php ini set <setting> <value>` you can change a PHP Settin
 
 ![GPT PHP Version](./../../../assets/images/gpt_php_ini_set1.jpg)
 
+## Changing Xdebug mode <Badge type="info" text="since v0.4.2" />
+
+::: info
+This section will only handle the command itself, a complete documentation on how to set it up and use it in different IDE´s and Tools can be found ADD LINK HERE
+:::
+
+With the command `gpt php xdebug` the current Xdebug mode will be shown for Web and CLI.
+
+![GPT PHP Xdebug](./../../../assets/images/gpt_php_xdebug1.jpg)
+
+There are multiple statuses that can be shown, which are the following:
+- *Unknown* - which means the tool wasn´t able to correctly check if xdebug is even installed. Make sure the `/phpinfo` page shows that xdebug is installed
+- *Not installed/inactive* - Means that Xdebug has not been installed
+
+The rest of the statuses are according to the possible Xdebug modes which are explained in [Xdebug Documentation](https://xdebug.org/docs/all_settings#mode) but their usage are also included in the Debug Documentation.
+
+Following the same principle as every other command it now asks if we want to change the setting and if we type in `y` then it will ask for Web and CLI which new setting should be used.
+
+![GPT PHP Xdebug](./../../../assets/images/gpt_php_xdebug2.jpg)
+
+## Install additional packages <Badge type="info" text="since v0.4.2" />
+
+We mostly want to use the same base image for all of our PHP based projects but there might be cases where a project needs a special package installed like `php-soap`. That´s why the command `gpt php packages` has been added.
+ With that command we can install additional packages and persist them during workspace restarts.
+
+Initially it shows all packages that are currently installed. Press enter to continue or use the up and down arrows to scroll through that list.
+![GPT PHP packages](./../../../assets/images/gpt_php_packages1.jpg)
+
+After you have answered the quest `Do you want to install other packages` with yes then it will check first if it finds some commonly used packages that are not installed yet and asks if we want to install one of them.
+![GPT PHP packages](./../../../assets/images/gpt_php_packages2.jpg)
+
+With the space key we can one or multiple packages that we want to install
+![GPT PHP packages](./../../../assets/images/gpt_php_packages3.jpg)
+
+After we have selected that packages we want, or skipped that step, it will ask if we want to install other packages that were not listed
+![GPT PHP packages](./../../../assets/images/gpt_php_packages4.jpg)
+
+We can now enter one or multiple packages, separated by a space, that we want to install. In this example we wanted to install `php-soap`. It is important to note that we don´t need to add a specific php version number to the package name, like `php8.2-soap` as the Tool will always try first to install the php version specific package before trying to install a generic one.
+![GPT PHP packages](./../../../assets/images/gpt_php_packages5.jpg)
+
 ## Restoring PHP Settings
 ::: info
 With release v0.4.0 there is a new command that restores all settings

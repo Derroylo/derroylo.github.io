@@ -21,7 +21,7 @@ php:
   - php8.0-zip
 ```
 
-### version
+## version
 With this setting the currently active PHP version can be defined. If you want to change the version during runtime you can use the `gpt php version` command. It will also list all available version.
 
 Example:
@@ -30,7 +30,7 @@ php:
     version: 8.2
 ```
 
-### config
+## config
 Under this config setting we can define the "global" settings for php, which means if they are not overwritten by `configWeb` or `configCLI`, these settings will be applied. Changing a setting and applying it to the current workspace can be done via the `gpt php ini set` command.
 
 Example:
@@ -43,7 +43,7 @@ php:
         post_max_size: 512M
 ```
 
-### configWeb <Badge type="info" text="since v0.4.0" />
+## configWeb <Badge type="info" text="since v0.4.0" />
 If you want to change the settings specific for the webserver, then put these settings in this section.
 
 Example:
@@ -53,7 +53,7 @@ php:
         memory_limit: 1G
 ```
 
-### configCLI <Badge type="info" text="since v0.4.0" />
+## configCLI <Badge type="info" text="since v0.4.0" />
 If you want to change the settings specific for CLI, then put these settings in this section.
 
 Example:
@@ -65,7 +65,7 @@ php:
         memory_limit: 0
 ```
 
-### packages <Badge type="info" text="since v0.4.0" />
+## packages <Badge type="info" text="since v0.4.0" />
 If you want to install additional packages, you can add them here and they will be installed via the `gpt restore php` command.
 
 Example:
