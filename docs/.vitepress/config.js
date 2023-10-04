@@ -18,8 +18,8 @@ export default defineConfig({
 
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/index', activeMatch: '/guide/' },
+      { text: 'Howto', link: '/howto/index', activeMatch: '/howto/' },
       { text: 'Reference', link: '/reference/index' },
     ],
 
@@ -67,14 +67,39 @@ export default defineConfig({
               ]
             }
           ]
-        },
-        {
-          text: 'Database / Live Data',
-          items: [
-            { text: 'Live Database', link: '/guide/database' },
-          ]
         }
       ],
+      "/howto": [
+          {
+            text: 'Howto´s',
+            items: [
+              { text: 'Xdebug', link: '/howto/xdebug/index'}
+            ]
+          }
+      ],
+      "/howto/xdebug": [
+        {
+          text: 'General',
+          items: [
+            { text: 'Introduction' },
+            { text: 'Installation' },
+            { text: 'Setup' }
+          ]
+        },
+        {
+          text: 'Xdebug Modes'
+        },
+        {
+          text: 'Usage',
+          items: [
+            { text: 'CLI' },
+            { text: 'Browser' },
+            { text: 'VS Code' },
+            { text: 'PhpStorm' },
+            { text: 'Postman' }
+          ]
+        }
+    ],
       "/reference": [
         {
           text: 'Reference',

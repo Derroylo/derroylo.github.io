@@ -1,3 +1,0 @@
-# Live Database
-
-***Coming soon***
