@@ -81,13 +81,19 @@ export default defineConfig({
         {
           text: 'General',
           items: [
-            { text: 'Introduction' },
-            { text: 'Installation' },
-            { text: 'Setup' }
+            { text: 'Introduction', link: '/howto/xdebug/index' },
+            { text: 'Installation', link: '/howto/xdebug/installation' },
+            { text: 'Setup', link: '/howto/xdebug/setup' }
           ]
         },
         {
-          text: 'Xdebug Modes'
+          text: 'Xdebug Modes',
+          items: [
+            { text: 'off', link: '/howto/xdebug/modes/off' },
+            { text: 'develop', link: '/howto/xdebug/modes/develop' },
+            { text: 'debug', link: '/howto/xdebug/modes/debug' },
+            { text: 'profile', link: '/howto/xdebug/modes/profile' }
+          ]
         },
         {
           text: 'Usage',
