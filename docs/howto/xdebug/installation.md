@@ -13,7 +13,7 @@ When you are using one of my workspace samples, there is nothing to do here as t
 
 Enter `php -v` in the command line and check if the output contains Xdebug as shown in the following image:
 
-![Xdebug check CLI](./../../../assets/images/howto_xdebug_install1.jpg)
+![Xdebug check CLI](./../../assets/images/howto_xdebug_install1.jpg)
 
 When the line "with Xdebug" is shown then Xdebug is installed.
 
@@ -28,7 +28,7 @@ phpinfo();
 ```
 and open it in your browser.
 
-![Xdebug check CLI](./../../../assets/images/howto_xdebug_install2.jpg)
+![Xdebug check CLI](./../../assets/images/howto_xdebug_install2.jpg)
 
 When the line "with Xdebug" is shown then Xdebug is installed.
 
