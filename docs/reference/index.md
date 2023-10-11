@@ -4,6 +4,10 @@ In this section you can find references to different parts of this tool.
 
 ## .gpt.yml
 
+::: info
+This file needs to be located in the root directory of your project
+:::
+
 With this file you can customize the workspace settings without the need to adjust the dockerfile for each project if they are using for example different php versions. Also most settings can be changed via a gpt command and directly applied to the running workspace. It also helps to persist changes to php.ini or the installed packages or selected php version as those are lost after a workspace restart.
 
 The file could look like this for example:
