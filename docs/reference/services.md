@@ -5,7 +5,7 @@ Within this config sections you can define settings for the services.
 The following example shows all settings that can be set and which will be explained on this page:
 
 ```yaml:line-numbers {1}
-php:
+services:
     file: gitpod.docker-compose.yml
     active:
         - mysql
@@ -19,7 +19,7 @@ php:
 In some cases it can happen that you have already a docker-compose.yml in your project but need a separate file for your gitpod services. You can now tell gpt to use another filename instead of the default docker-compose.yml.
 
 ```yaml:line-numbers {1}
-php:
+services:
     file: gitpod.docker-compose.yml
 ```
 
