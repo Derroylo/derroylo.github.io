@@ -49,6 +49,8 @@ export default defineConfig({
                 { text: 'Services', link: '/guide/usage/commands/services' },
                 { text: 'Restore', link: '/guide/usage/commands/restore' },
                 { text: 'Ask', link: '/guide/usage/commands/ask' },
+                { text: 'Persist', link: '/guide/usage/commands/persist' },
+                { text: 'Sync', link: '/guide/usage/commands/sync' },
               ]
             }
           ]
@@ -118,6 +120,7 @@ export default defineConfig({
                 { text: 'Services', link: '/reference/services' },
                 { text: 'NodeJS', link: '/reference/nodejs' },
                 { text: 'Shellscripts', link: '/reference/shell-scripts' },
+                { text: 'Persist', link: '/reference/persist' },
               ]
             }
           ]

@@ -10,3 +10,6 @@ With the command `gpt restore php` the selected PHP Version and the configured s
 
 ## Restore NodeJS version <Badge type="info" text="since v0.4.0" />
 With the command `gpt restore nodejs` the selected NodeJS version will be restored.
+
+## Restore persisted vars, files and folders version <Badge type="info" text="since v0.5.0" />
+With the command `gpt restore persist` the persisted variables, files and folders will be restored.
