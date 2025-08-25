@@ -1,3 +1,9 @@
+::: danger
+This Documentation is currently being rewritten for WebDev, which is the successor of GPT (for which this docs have been written), as Gitpod Classic will be shutdown in the next few weeks.
+
+The Release of WebDev is currently planned within the first two weeks of september.
+:::
+
 # NodeJS Commands <Badge type="info" text="since v0.4.0" />
 
 With this command you can change the currently active NodeJS version.

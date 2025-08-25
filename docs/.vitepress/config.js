@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "GPT Documentation",
-  description: "A tool that aims to make life easier with web development using gitpod",
+  title: "WebDev Documentation",
+  description: "A tool that aims to make life easier with web development using devcontainer",
   lang: 'en-US',
   lastUpdated: true,
   base: "/",
@@ -18,19 +18,19 @@ export default defineConfig({
 
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Guide', link: '/guide/index', activeMatch: '/guide/' },
+      { text: 'Guide', link: '/', activeMatch: '/' },
       { text: 'Howto', link: '/howto/index', activeMatch: '/howto/' },
       { text: 'Reference', link: '/reference/index' },
     ],
 
     sidebar: {
-      "/guide": [
+      "/": [
         {
           text: 'Introduction',
           items: [
-            { text: 'What is GPT?', link: '/guide/index' },
-            { text: 'Installation', link: '/guide/install' },
-            { text: 'Development', link: '/guide/develop' },
+            { text: 'What is WebDev?', link: '/index' },
+            { text: 'Installation', link: '/install' },
+            { text: 'Development', link: '/develop' },
           ]
         },
         {
@@ -58,7 +58,7 @@ export default defineConfig({
         {
           text: 'Extensions',
           items: [
-            { text: 'Extend GPT', link: '/guide/extensions' },
+            { text: 'Extend WebDev', link: '/guide/extensions' },
             {
               text: 'Extension Examples',
               items: [
@@ -113,7 +113,7 @@ export default defineConfig({
           text: 'Reference',
           items: [
             {
-              text: 'gpt.yml',
+              text: 'webdev.yml',
               items: [
                 { text: 'Config', link: '/reference/config' },
                 { text: 'PHP', link: '/reference/php' },
@@ -129,8 +129,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/Derroylo/gitpod-tool' },
-      { icon: 'twitter', link: 'https://twitter.com/Derroylo' }
+      { icon: 'github', link: 'https://github.com/Derroylo/webdev-tool' }
     ]
   }
 })

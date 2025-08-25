@@ -1,3 +1,9 @@
+::: danger
+This Documentation is currently being rewritten for WebDev, which is the successor of GPT (for which this docs have been written), as Gitpod Classic will be shutdown in the next few weeks.
+
+The Release of WebDev is currently planned within the first two weeks of september.
+:::
+
 # Services Commands
 
 With a docker-compose.yml file you can add services to your current workspace. Usually you would only add services that you currently need for your project. With this command we can add as many services as we want but only start the ones we need and save resources. Espescially if you have services like Elasticsearch that reserves alot of RAM. Also we have the ability to add services that would need the same Port, like MySQL or MariaDB. We can also add different tools for the same purpose like Mailhog, Mailcatcher or Mailpit. One user might prefer Mailhog, another one Mailcatcher. With this command we can add all of them and only start the one we need.

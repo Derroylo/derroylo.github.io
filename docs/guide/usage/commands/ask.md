@@ -1,3 +1,9 @@
+::: danger
+This Documentation is currently being rewritten for WebDev, which is the successor of GPT (for which this docs have been written), as Gitpod Classic will be shutdown in the next few weeks.
+
+The Release of WebDev is currently planned within the first two weeks of september.
+:::
+
 # Ask Command <Badge type="info" text="since v0.4.0" />
 
 This command provides the possibility to ask the Gitpod Ai questions, similar to ChatGPT, just only for questions related to gitpod. In the future this documentation might be included too, so that you can ask questions about GPT too.

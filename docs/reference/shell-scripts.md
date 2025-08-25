@@ -1,3 +1,9 @@
+::: danger
+This Documentation is currently being rewritten for WebDev, which is the successor of GPT (for which this docs have been written), as Gitpod Classic will be shutdown in the next few weeks.
+
+The Release of WebDev is currently planned within the first two weeks of september.
+:::
+
 # Shell scripts <Badge type="info" text="since v0.4.0" />
 
 This tool can be extended via shell scripts, as described in the documentation. In this section these can be configured
