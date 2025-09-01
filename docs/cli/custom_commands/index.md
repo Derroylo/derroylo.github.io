@@ -5,7 +5,7 @@ WebDev can be extended via shell scripts. This means it scans a certain director
 
 ## Locations
 
-The default folder that will be scanned for extensions is `.devcontainer/scripts`. Additional folders can be defined within ´webdev.yml` configuration file. Check the [Reference section](/reference/shell-scripts) to see on how this can be done.
+The default folder that will be scanned for extensions is `.devcontainer/scripts`. Additional folders can be defined within ´webdev.yml` configuration file. Check the [Reference section](/reference/webdev_yml/shell-scripts) to see on how this can be done.
 
 ## Advantage
 While most systems have a build-in console with commands, you may need to add custom shell scripts that execute cronjobs, init your system (composer install, npm/yarn install etc.), run tests, load demo data or do some stuff after a branch change. So after a while you might have a dozen of these scripts and while for some developers it might be easy to identify which script does what, not all of them know it. Another thing is that your scripts might use arguments, so that you need to take a look inside the script to check which it has and for what purpose.

@@ -9,7 +9,7 @@ To prevent spamming the github api, the check for a newer version, will be cache
 :::
 
 ## Pre-Release Versions
-If you want to test versions that are not ready yet for productive usage, you can activate it with a settings in the `.webdev.yml` file. [See reference](/reference/config.html)
+If you want to test versions that are not ready yet for productive usage, you can activate it with a settings in the `.webdev.yml` file. [See reference](/reference/webdev_yml/config)
 
 ## Troubleshooting
 ### WebDev says no update is available even though there is one

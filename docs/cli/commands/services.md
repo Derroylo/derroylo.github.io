@@ -9,14 +9,14 @@ With a docker-compose.yml file you can add services to your current workspace. U
 ## List services
 With the command `webdev services list` you can see all available services and their current status.
 
-![WebDev Services List](./../../../assets/images/gpt_services_list.jpg)
+![WebDev Services List](./../../assets/images/gpt_services_list.jpg)
 
 ## Select active services
 With the command `webdev services select` you can select the services you want to start. The services will be saved in the `webdev.yml` file and will be used the next time you start the workspace.
 
-![WebDev Services Select](./../../../assets/images/gpt_services_select.jpg)
+![WebDev Services Select](./../../assets/images/gpt_services_select.jpg)
 
-***Note***: You may have noticed that the services are split into different categories, this done via a lable in the `docker-compose.yml` file. The label is called `com.webdev.category` and an example can be seen [here]()
+***Note***: You may have noticed that the services are split into different categories, this done via a lable in the `docker-compose.yml` file. The label is called `com.webdev.category` and an example can be seen [here](/reference/docker_compose/)
 
 You can select/deselect the services you want to set active with the spacebar. After you have selected the services you want to start, you can press enter to save the selection. The selected services will be saved in the `webdev.yml` file and will be used the next time you start the workspace.
 
