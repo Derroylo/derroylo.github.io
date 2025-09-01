@@ -1,14 +1,4 @@
-::: danger
-This Documentation is currently being rewritten for WebDev, which is the successor of GPT (for which this docs have been written), as Gitpod Classic will be shutdown in the next few weeks.
-
-The Release of WebDev is currently planned within the first two weeks of september.
-:::
-
 # Xdebug
-
-::: info
-This Howto is still work in progress but should be finished in the next few weeks, so make sure to check this page from time to time for updates.
-:::
 
 ## Introduction
 

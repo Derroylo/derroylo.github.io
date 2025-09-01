@@ -1,12 +1,6 @@
-::: danger
-This Documentation is currently being rewritten for WebDev, which is the successor of GPT (for which this docs have been written), as Gitpod Classic will be shutdown in the next few weeks.
-
-The Release of WebDev is currently planned within the first two weeks of september.
-:::
-
 # Howto
 
-Over time more and more Howto´s will be added to get the best experience with PHP development on Gitpod.
+Over time more and more Howto´s will be added. Feel free to open an issue on Github, if you want to have added a specific HowTo.
 
 ## Xdebug
 In this Howto the required setup will be explained and how to use it in your IDE and in different Tools. Also the different modes and their usage will be explained.

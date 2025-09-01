@@ -1,37 +1,27 @@
-::: danger
-This Documentation is currently being rewritten for WebDev, which is the successor of GPT (for which this docs have been written), as Gitpod Classic will be shutdown in the next few weeks.
+# What is Webdev?
+WebDev is a local web development environment tool that extends the abilities of DevContainer.
 
-The Release of WebDev is currently planned within the first two weeks of september.
+## What are DevContainer?
+DevContainer is a specification to create container based development environments. Thank to many IDE integrations, we can also declare which extensions should be installed.
+
+## What are the advantages of the DevContainer specifications?
+The specifications is a simple json file that defines which container it should start, which commands should be executed on create, start etc. or which extensions should be installed in the IDE.
+
+The specification can be found [here](https://containers.dev/implementors/spec/).
+
+Another advantage is that many IDE´s support DevContainer out of the box, like VS Code, Cursor, Windsurf etc. So you just need to open your project within that IDE, you will get a notification that asks you if you want to open the project with DevContainer and that is all you need to do.
+
+::: info
+PhpStorm can also be used directly with DevContainer but it is recommended to start the DevContainer seperat and then just open the project folder. The IDE Installation within the docker container takes a bit of time, since it downloads and installs over one gigabyte.
 :::
 
-# Guide
-
-## What is GPT?
-GPT is a tool for the Cloud Development Environment [Gitpod](https://www.gitpod.io) that provides a lot of functions to make web development easier. 
-
-## Samples
-Check out one of these samples if you want to see GPT in action:
-- [Shopware workspace sample](https://github.com/Derroylo/shopware-workspace-sample) (usually the most up to date version)
-- [Oxid workspace sample](https://github.com/Derroylo/oxid-workspace-sample)
-- [Sulu workspace sample](https://github.com/Derroylo/sulu-workspace-sample)
-- [Symfony workspace sample](https://github.com/Derroylo/symfony-workspace-sample)
+## Examples
+Checkout the [Example Repo](https://github.com/Derroylo/devcontainer-examples) to see different examples for Shopware, Oxid, Sulu, Symfony or a simple php project.
 
 ## Functions
-- Change PHP version and apply it to the running workspace
-- Change PHP settings and apply them to the running workspace
-- Change NodeJS version
-- Extendable via Shell scripts
-- Start/Stop/Restart Apache
-- Select services you want to start with your workspace
-- Predefine the workspace settings via a config file
-- Has an integrated update system, so you can switch to the latest version with a simple command
-- Ask the Gitpod AI questions
+Coming soon
 
 ## Planned functions for future releases
-- Create Snapshots of your database and restore them
-- Import/Export data from your database
-- Change the xdebug settings
-- Save/Restore files from/to env variables
-- and many more
+Coming soon
 
-For more information check the [Issues](https://github.com/Derroylo/gitpod-tool/issues) to see what is planned for which version or create a new issue if you encounter problems or have a idea that should be implemented. You can also head over to the [Gitpod discord server](https://discord.com/invite/gitpod) if you have questions.
+For more information visit [Github issues](https://github.com/Derroylo/webdev-tool/issues) to see what is planned for future versions, report a bug or a feature that you would like to see in a future release.

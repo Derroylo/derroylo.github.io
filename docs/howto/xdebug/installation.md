@@ -1,18 +1,6 @@
-::: danger
-This Documentation is currently being rewritten for WebDev, which is the successor of GPT (for which this docs have been written), as Gitpod Classic will be shutdown in the next few weeks.
-
-The Release of WebDev is currently planned within the first two weeks of september.
-:::
-
 # Installation
 
-::: info
-Make sure that you are using GPT in version 0.4.2 or higher, otherwise you might need to install Xdebug manually when not using the latest available PHP version.
-
-Once 0.4.2 is released, all workspace samples will be updated. Till then it might be needed to install Xdebug manually.
-:::
-
-When you are using one of my workspace samples, there is nothing to do here as these already include the Xdebug package and GPT will take care of it that it is also installed when you switch to an older version of PHP.
+When you are using one of my workspace samples, there is nothing to do here as these already include the Xdebug package and webdev will take care of it that it is also installed when you switch to an older version of PHP.
 
 ## Check if it is correctly installed
 ### Via CLI
