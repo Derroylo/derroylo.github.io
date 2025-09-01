@@ -8,6 +8,62 @@ export default defineConfig({
   lastUpdated: true,
   base: "/",
   cleanUrls: true,
+  head: [
+    ['script', { src: 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js' }],
+    ['script', {}, `
+      function initMermaid() {
+        if (typeof mermaid !== 'undefined') {
+          console.log('Initializing Mermaid...');
+          mermaid.initialize({ 
+            startOnLoad: false,
+            theme: 'default',
+            securityLevel: 'loose',
+            fontFamily: 'inherit',
+            logLevel: 1,
+            htmlLabels: true
+          });
+          
+          // Find all mermaid elements and render them
+          const mermaidElements = document.querySelectorAll('.language-mermaid');
+          console.log('Found', mermaidElements.length, 'mermaid elements');
+          
+          mermaidElements.forEach((element, index) => {
+            let code = element.textContent;
+            code = code.replace('mermaid', '');
+
+            try {
+              console.log('Rendering mermaid element', index + 1);
+              const id = 'mermaid-' + Date.now() + '-' + index;
+              element.id = id;
+              
+              mermaid.render(id, code).then(({svg}) => {
+                console.log('SVG:', svg);
+                element.innerHTML = svg;
+              }).catch((error) => {
+                console.error('Error rendering mermaid element', index + 1, ':', error);
+                console.log('Element content:', code);
+              });
+            } catch (error) {
+              console.error('Error rendering mermaid element', index + 1, ':', error);
+              console.log('Element content:', code);
+            }
+          });
+        } else {
+          console.log('Mermaid not loaded yet, retrying...');
+          setTimeout(initMermaid, 100);
+        }
+      }
+      
+      // Try to initialize on DOMContentLoaded first
+      //document.addEventListener('DOMContentLoaded', initMermaid);
+      
+      // Fallback to load event
+      //window.addEventListener('load', initMermaid);
+      
+      // Also try immediately in case script loads after DOM
+      initMermaid();
+    `]
+  ],
   themeConfig: {
     search: {
       provider: 'local'
