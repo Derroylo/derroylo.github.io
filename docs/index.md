@@ -18,7 +18,7 @@ PhpStorm can also be used directly with DevContainer but it is recommended to st
 ## Why do i need a separate tool?
 You could use a devcontainer setup, or a simple docker-compose, without any external tools of course, but these tools make the development environment easier to use and more flexible. In fact most development environments include such a tool. For example dockware (which is a devEnv specific for shopware) has a makefile to change php versions or to install a specific shopware version. So, while a little makefile can be used for simpler tasks, a CLI Tool is "necessary" when you want to provide more functionality to the developer. Other, more flexible, developer environments bring their own CLI with them, for example DDEV or Lando.
 
-That being said, the next section shows some examples on what WebDev adds as functionality to the DevContainer setup. Checkout the [CLI](./cli) page to see all available commands.
+That being said, the next section shows some examples on what WebDev adds as functionality to the DevContainer setup. Checkout the [CLI](/cli/) page to see all available commands.
 
 ## Functions
 - Changing the php/node version with a simple command
