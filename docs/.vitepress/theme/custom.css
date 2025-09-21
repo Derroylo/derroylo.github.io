@@ -13,12 +13,35 @@
   height: auto;
 }
 
+/* Mermaid container styling */
+.mermaid-container {
+  text-align: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.mermaid-container svg {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Ensure proper spacing around diagrams */
 .mermaid + p {
   margin-top: 1rem;
 }
 
+.mermaid-container + p {
+  margin-top: 1rem;
+}
+
 /* Dark theme support */
 .dark .mermaid {
+  background: #1a1a1a;
+}
+
+.dark .mermaid-container {
   background: #1a1a1a;
 }

@@ -10,7 +10,7 @@ config:
   workspaceFolder: workspaces
   proxy:
     domain: dev.localhost
-    subdomain: example
+    subDomain: example
 ```
 
 ## allowPreReleases

@@ -16,36 +16,47 @@ export default defineConfig({
           console.log('Initializing Mermaid...');
           mermaid.initialize({ 
             startOnLoad: false,
-            theme: 'default',
+            theme: 'dark',
+            darkMode: true,
             securityLevel: 'loose',
             fontFamily: 'inherit',
             logLevel: 1,
             htmlLabels: true
           });
           
-          // Find all mermaid elements and render them
-          const mermaidElements = document.querySelectorAll('.language-mermaid');
+          // Find all mermaid code blocks and render them
+          const mermaidElements = document.querySelectorAll('.language-mermaid pre code');
           console.log('Found', mermaidElements.length, 'mermaid elements');
           
           mermaidElements.forEach((element, index) => {
-            let code = element.textContent;
-            code = code.replace('mermaid', '');
-
             try {
               console.log('Rendering mermaid element', index + 1);
               const id = 'mermaid-' + Date.now() + '-' + index;
-              element.id = id;
+              
+              // Get the parent pre element to replace
+              const preElement = element.parentElement;
+              preElement.id = id;
+              
+              // Get the code content
+              const code = element.textContent;
+              console.log('Code content:', code);
               
               mermaid.render(id, code).then(({svg}) => {
-                console.log('SVG:', svg);
-                element.innerHTML = svg;
+                console.log('SVG generated successfully');
+
+                console.log('Parent element:', preElement.parentElement);
+
+                // Replace the pre element content with the SVG
+                document.querySelector('.language-mermaid').innerHTML = svg;
+                //preElement.innerHTML = svg;
+                //preElement.className = 'mermaid-container';
               }).catch((error) => {
                 console.error('Error rendering mermaid element', index + 1, ':', error);
                 console.log('Element content:', code);
               });
             } catch (error) {
               console.error('Error rendering mermaid element', index + 1, ':', error);
-              console.log('Element content:', code);
+              console.log('Element content:', element.textContent);
             }
           });
         } else {
@@ -114,7 +125,14 @@ export default defineConfig({
                 { text: 'Apache', link: '/cli/commands/apache' },
                 { text: 'Services', link: '/cli/commands/services' },
                 { text: 'Restore', link: '/cli/commands/restore' },
+                { text: 'Project', link: '/cli/commands/project' },
+                { text: 'Secrets', link: '/cli/commands/secrets' },
+                { text: 'Tasks', link: '/cli/commands/tasks' },
+                { text: 'Info', link: '/cli/commands/info' },
               ]
+            },
+            { 
+              text: 'Env Variables', link: '/cli/env_variables'
             },
             { 
               text: 'Custom Commands', 
@@ -196,6 +214,7 @@ export default defineConfig({
             {
               text: 'WebDev',
               items: [
+                { text: 'WebDev execute', link: '/reference/webdev/webdev_execute' },
                 { text: 'Init process', link: '/reference/webdev/init_process' },
                 { text: 'Post start process', link: '/reference/webdev/post_start_process' },
               ]

@@ -9,7 +9,7 @@ config:
   workspaceFolder: workspaces
   proxy:
     domain: dev.localhost
-    subdomain: example
+    subDomain: example
 php:
   version: 8.1
   config:
@@ -59,7 +59,7 @@ secrets:
       key: auth
       group: composer
     target:
-      file: secret.json
+      file: auth.json
   GitlabDockerLoginSecret:
     source:
       key: gitlab_docker_login
@@ -68,7 +68,19 @@ secrets:
       envVar: file
 workspaces:
   main:
-    subDomain:
+    subDomains:
     - test1
     - test2
+  cms:
+    name: Test worspace
+    description: This is a test workspace for webdev
+    repository: https://github.com/Derroylo/webdev-tool.git
+    branch: main
+    folder: cms
+    docRoot: public
+    mode: vhost
+    subDomains:
+      - cms
+      - sulu
+    disableWeb: false
 ```
