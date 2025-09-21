@@ -105,6 +105,18 @@ export default defineConfig({
           ]
         },
         {
+          text: 'Details',
+          items: [
+            { text: 'Setup project with WebDev', link: '/convert_project' },
+            { text: 'Proxy', link: '/proxy' },
+            { text: 'Workspaces', link: '/workspaces' },
+            { text: 'Tasks', link: '/tasks' },
+            { text: 'Secrets', link: '/secrets' },
+            { text: 'Live Database', link: '/live_database' },
+            { text: 'Services', link: '/services' },
+          ]
+        },
+        {
           text: 'Changelog',
           collapsed: true,
           items: [
