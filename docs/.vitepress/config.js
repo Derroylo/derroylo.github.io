@@ -120,6 +120,7 @@ export default defineConfig({
           text: 'Changelog',
           collapsed: true,
           items: [
+            { text: 'v0.3.1', link: '/changelog/v0.3.1' },
             { text: 'v0.3.0', link: '/changelog/v0.3.0' },
           ]
         }
