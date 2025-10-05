@@ -4,7 +4,7 @@ In this section it will be explained on how to define secrets.
 
 The following example shows all settings that can be set and which will be explained on this page:
 
-```yaml:line-numbers {1}
+```yaml:line-numbers
 secrets:
   ComposerSecret:
     source:
