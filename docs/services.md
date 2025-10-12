@@ -40,7 +40,7 @@ volumes:
   elasticsearch-data:
 ```
 
-To tell WebDev that you want to start the new service, you need to first add it to your [webdev.yml](http://localhost:5173/reference/webdev_yml/services#active). As alternative you can use the command `webdev services select` to select the services you want to start. If you have already started your development environment, then just execute the command `webdev services start -d` on your host system, to start the new service. Otherwise just start it normally and the new service will be available.
+To tell WebDev that you want to start the new service, you need to first add it to your [webdev.yml](/reference/webdev_yml/services#active). As alternative you can use the command `webdev services select` to select the services you want to start. If you have already started your development environment, then just execute the command `webdev services start -d` on your host system, to start the new service. Otherwise just start it normally and the new service will be available.
 
 ## A more detailed explaination
 
