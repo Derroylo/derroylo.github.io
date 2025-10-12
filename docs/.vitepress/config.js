@@ -134,6 +134,7 @@ export default defineConfig({
                 { text: 'Apache', link: '/cli/commands/apache' },
                 { text: 'Configuration', link: '/cli/commands/config' },
                 { text: 'Info', link: '/cli/commands/info' },
+                { text: 'MySQL', link: '/cli/commands/mysql' },
                 { text: 'NodeJS', link: '/cli/commands/nodejs' },
                 { text: 'PHP', link: '/cli/commands/php' },
                 { text: 'Project', link: '/cli/commands/project' },
