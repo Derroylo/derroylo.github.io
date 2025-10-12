@@ -12,6 +12,6 @@ With the command `webdev project start` you can start the project. Executing thi
 
 Internally this command will use the devcontainer CLI to start the devcontainer and all defined create, init and start commands.
 
-## Stop the project
+## Stop the project <Badge type="info" text="Since v0.3.1" />
 
 The command `webdev project stop` will stop all running containers of this project.
