@@ -131,17 +131,17 @@ export default defineConfig({
             { 
               text: 'Commands', 
               items: [
-                { text: 'Update', link: '/cli/commands/update' },
-                { text: 'Configuration', link: '/cli/commands/config' },
-                { text: 'PHP', link: '/cli/commands/php' },
-                { text: 'NodeJS', link: '/cli/commands/nodejs' },
                 { text: 'Apache', link: '/cli/commands/apache' },
-                { text: 'Services', link: '/cli/commands/services' },
-                { text: 'Restore', link: '/cli/commands/restore' },
-                { text: 'Project', link: '/cli/commands/project' },
-                { text: 'Secrets', link: '/cli/commands/secrets' },
-                { text: 'Tasks', link: '/cli/commands/tasks' },
+                { text: 'Configuration', link: '/cli/commands/config' },
                 { text: 'Info', link: '/cli/commands/info' },
+                { text: 'NodeJS', link: '/cli/commands/nodejs' },
+                { text: 'PHP', link: '/cli/commands/php' },
+                { text: 'Project', link: '/cli/commands/project' },
+                { text: 'Restore', link: '/cli/commands/restore' },
+                { text: 'Secrets', link: '/cli/commands/secrets' },
+                { text: 'Services', link: '/cli/commands/services' },
+                { text: 'Tasks', link: '/cli/commands/tasks' },
+                { text: 'Update', link: '/cli/commands/update' },
               ]
             },
             { 
