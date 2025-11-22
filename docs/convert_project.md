@@ -172,8 +172,7 @@ To get started, you should change the value for name (line 4) to match your proj
 		}
 	},
 	"initializeCommand": "webdev workspaces-on-init --no-header && webdev tasks init --no-header",
-	"postStartCommand": "sudo webdev workspaces-post-start --no-header && webdev tasks start --no-header",
-	"postCreateCommand": "sudo ln -sf ~/webdev/webdev.sh /usr/local/bin/webdev && webdev tasks create --no-header",
+	"postStartCommand": "sudo ln -sf ~/webdev/webdev.sh /usr/local/bin/webdev && webdev tasks create --no-header && sudo webdev workspaces-post-start --no-header && webdev tasks start --no-header",
 	"remoteUser": "webdev",
 	"workspaceFolder": "/var/www/html/",
 	"containerEnv": {

@@ -55,24 +55,62 @@ tasks:
     - apachectl start
 secrets:
   ComposerSecret:
+    missingMessage: Secrets.Missing.Composer
     source:
       key: auth
       group: composer
     target:
       file: auth.json
+      expectedSecrets:
+        - GitLab
+        - Package Repository
   GitlabDockerLoginSecret:
+    missingMessage: Secrets.Missing.DockerLogin.Gitlab
     source:
       key: gitlab_docker_login
       group: docker
     target:
       envVar: file
+      expectedVars:
+        - DOCKER_USERNAME
+        - DOCKER_PASSWORD
+tests:
+  lint:
+    name: Run php-cs-fixer and phpstan
+    tests:
+    - phpcsfixer
+    - phpstan
+  phpcsfixer:
+    name: Run php-cs-fixer
+    commands:
+    - php vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php -vvv --dry-run --diff --using-cache=no
+  phpcsfixer-fix:
+    name: Run php-cs-fixer fix
+    commands:
+    - php vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php -vvv --diff --using-cache=no
+  phpstan:
+    name: Run phpstan
+    commands:
+    - php -d memory_limit=1G vendor/bin/phpstan analyze -c phpstan.dist.neon
+  phpstan-baseline:
+    name: Generate phpstan baseline
+    commands:
+    - php -d memory_limit=1G vendor/bin/phpstan analyze -c phpstan.dist.neon --generate-baseline
+  phpunit:
+    name: Run phpunit
+    commands:
+    - php vendor/bin/phpunit --testdox --colors
+  coverage:
+    name: Run phpunit with coverage
+    commands:
+    - XDEBUG_MODE=coverage php vendor/bin/phpunit --coverage-html coverage
 workspaces:
   main:
     subDomains:
     - test1
     - test2
   cms:
-    name: Test worspace
+    name: Test workspace
     description: This is a test workspace for webdev
     repository: https://github.com/Derroylo/webdev-tool.git
     branch: main

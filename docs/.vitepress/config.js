@@ -143,6 +143,7 @@ export default defineConfig({
                 { text: 'Secrets', link: '/cli/commands/secrets' },
                 { text: 'Services', link: '/cli/commands/services' },
                 { text: 'Tasks', link: '/cli/commands/tasks' },
+                { text: 'Tests', link: '/cli/commands/tests' },
                 { text: 'Update', link: '/cli/commands/update' },
               ]
             },
@@ -218,6 +219,7 @@ export default defineConfig({
                 { text: 'Secrets', link: '/reference/webdev_yml/secrets' },
                 { text: 'Workspaces', link: '/reference/webdev_yml/workspaces' },
                 { text: 'Tasks', link: '/reference/webdev_yml/tasks' },
+                { text: 'Tests', link: '/reference/webdev_yml/tests' },
               ]
             },
             {
