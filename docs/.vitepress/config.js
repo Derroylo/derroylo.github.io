@@ -114,6 +114,7 @@ export default defineConfig({
             { text: 'Secrets', link: '/secrets' },
             { text: 'Live Database', link: '/live_database' },
             { text: 'Services', link: '/services' },
+            { text: 'Running Tests', link: '/tests' },
           ]
         },
         {

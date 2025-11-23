@@ -1,5 +1,9 @@
 # Setup your own project with WebDev
 
+::: info
+Make sure you have followed the steps under the [installation section](/install) before you continue with the first steps
+:::
+
 ## Short explaination
 
 Instead of using on the examples from the example repository, we will setup a project with WebDev from the ground up.

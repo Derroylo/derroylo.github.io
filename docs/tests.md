@@ -1,0 +1,52 @@
+# Running Tests <Badge type="info" text="Since v0.3.2" />
+
+## Overview
+
+Usually you would run Tests like `phpcsfixer` or `phpunit` via command line with commands like `php vendor/bin/phpunit` or `composer run phpunit`. WebDev offers now another way to execute these commands. The advantage is that all commands are accessable via one command line, so you don´t need to switch between nodejs or php commands and using `webdev tests` you can get an overview of all available tests. Another advantage is, that you you don´t need to start your devEnv just to run phpunit or phpcsfixer tests. When running a command within your linux terminal, webdev will execute these commands in a small alpine container.
+
+## How to add tests?
+
+Just add the tests you want to use to your `webdev.yml`. So it could look like this:
+
+```yaml:line-numbers {1}
+tests:
+  lint:
+    name: Run php-cs-fixer and phpstan
+    tests:
+    - phpcsfixer
+    - phpstan
+  phpcsfixer:
+    name: Run php-cs-fixer
+    commands:
+    - php vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php -vvv --dry-run --diff --using-cache=no
+  phpcsfixer-fix:
+    name: Run php-cs-fixer fix
+    commands:
+    - php vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php -vvv --diff --using-cache=no
+  phpstan:
+    name: Run phpstan
+    commands:
+    - php -d memory_limit=1G vendor/bin/phpstan analyze -c phpstan.dist.neon
+  phpstan-baseline:
+    name: Generate phpstan baseline
+    commands:
+    - php -d memory_limit=1G vendor/bin/phpstan analyze -c phpstan.dist.neon --generate-baseline
+  phpunit:
+    name: Run phpunit
+    commands:
+    - php vendor/bin/phpunit --testdox --colors
+  coverage:
+    name: Run phpunit with coverage
+    commands:
+    - XDEBUG_MODE=coverage php vendor/bin/phpunit --coverage-html coverage
+```
+
+## How to run tests?
+
+Running the tests, is now as easy as using the command `webdev tests lint`, where `lint` is the key of the test you want to run. To get an overview of existing tests use the command `webdev tests`.
+
+When executing the command outside of your devcontainer in a "normal" linux shell, webdev will start a small alpine cli php container, using the set php version in your ´webdev.yml`. Inside of your devcontainer, the commands will be directly executed.
+
+## Current limitations
+- Available PHP Versions: 8.2, 8.3, 8.4
+- No NodeJS Images available yet, use the Image tag to use your own Image
