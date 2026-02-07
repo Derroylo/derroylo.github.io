@@ -31,7 +31,7 @@ Since the development environment is based on devcontainer, we need to create fi
    ├─ .gitignore
    ├─ devcontainer.json
    ├─ docker-compose.yml
-   └─ webdev.ynl
+   └─ webdev.yml
 ```
 
 ### Scripts folder (line 3)
