@@ -1,0 +1,67 @@
+---
+title: Services
+tableOfContents:
+  minHeadingLevel: 4
+  maxHeadingLevel: 4
+banner:
+  content: |
+    This documentation is currently being updated for the upcoming release of version 0.4. It may not yet reflect all necessary changes or new features of this version.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+Within this config sections you can define settings for the services.
+
+<Aside>
+To be able to use the proxy, so your system is reachable via `shop.example.dev.localhost`, you need to have at least traefik active.
+</Aside>
+
+The following example shows all settings that can be set and which will be explained on this page:
+
+```yaml showLineNumbers
+services:
+  traefik:
+    name: Reverse Proxy for Web Development
+    category: proxy
+    active: true
+    port: 8080
+    subDomain: traefik
+  mysql:
+    name: MySQL Server - Relational Database
+    category: database
+    active: false
+  mailpit:
+    name: Mailpit - Email Testing Tool
+    active: true
+    category: mail
+    port: 8025
+    subDomain: mail
+  redis:
+    name: Redis - In-Memory Key-Value Store
+    category: cache
+  phpmyadmin:
+    name: PhpMyAdmin - MySQL Admin Tool
+    category: tools
+    port: 80
+    subDomain: pma
+  phpcacheadmin:
+    name: PhpCacheAdmin - UI for managing PHP cache systems
+    category: tools
+    port: 80
+    subDomain: pca
+```
+
+#### name
+This name is only for internal usage and will be shown when using the info command for example.
+
+#### category
+Can be left empty and is currently only used for the servies list command to group services together.
+
+#### port
+When you want the service to be reachable from the outside via the proxy, you need to define the port that should be exposed. Otherwise it can be left empty.
+
+#### subDomain
+When you want the service to be reachable from the outside via the proxy, you need to define the subdomain under which it should be reachable. Otherwise it can be left empty.
+
+#### active
+Set this to true if you wish to start the service together with your project. If you do not define it, then it will defaults to false.

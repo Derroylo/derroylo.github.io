@@ -1,0 +1,55 @@
+---
+title: Tests
+banner:
+  content: |
+    This documentation is currently being updated for the upcoming release of version 0.4. It may not yet reflect all necessary changes or new features of this version.
+---
+
+import { Badge } from '@astrojs/starlight/components';
+
+# Tests Commands <Badge type="info" text="Since v0.3.2" />
+
+With this command we can run one of the specified tests.
+
+## Execute a test <Badge type="info" text="Since v0.3.2" />
+
+For example these are the tests that are defined in our `webdev.yml`
+
+```yaml showLineNumbers
+tests:
+  lint:
+    name: Run php-cs-fixer and phpstan
+    tests:
+    - phpcsfixer
+    - phpstan
+  phpcsfixer:
+    name: Run php-cs-fixer
+    commands:
+    - php vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php -vvv --dry-run --diff --using-cache=no
+  phpcsfixer-fix:
+    name: Run php-cs-fixer fix
+    commands:
+    - php vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php -vvv --diff --using-cache=no
+  phpstan:
+    name: Run phpstan
+    commands:
+    - php -d memory_limit=1G vendor/bin/phpstan analyze -c phpstan.dist.neon
+  phpstan-baseline:
+    name: Generate phpstan baseline
+    commands:
+    - php -d memory_limit=1G vendor/bin/phpstan analyze -c phpstan.dist.neon --generate-baseline
+  phpunit:
+    name: Run phpunit
+    commands:
+    - php vendor/bin/phpunit --testdox --colors
+  coverage:
+    name: Run phpunit with coverage
+    commands:
+    - XDEBUG_MODE=coverage php vendor/bin/phpunit --coverage-html coverage
+```
+
+When you execute the command `webdev tests phpcsfixer`, the tool will execute the given commands defined for this test. Depending on where you execute the command, they will either directly execute within the running devcontainer or a small alpine container will be started, execute the command and stop afterwards.`.
+
+## Execute multiple tests
+
+If we take the same example from example, the command `webdev tests lint` has no commands defined but rather points to the existing tests `phpcsfixer` and `phpstan`. So when executing that command, the tool will first run the commands defined for the test `phpcsfixer` and then `phpstan`.

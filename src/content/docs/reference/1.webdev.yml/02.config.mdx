@@ -1,0 +1,57 @@
+---
+title: Config
+tableOfContents:
+  minHeadingLevel: 4
+  maxHeadingLevel: 4
+banner:
+  content: |
+    This documentation is currently being updated for the upcoming release of version 0.4. It may not yet reflect all necessary changes or new features of this version.
+---
+
+In this section general config settings will be explained.
+
+The following example shows all settings that can be set and which will be explained on this page:
+
+```yaml showLineNumbers
+config:
+  workspaceFolder: workspaces
+  proxy:
+    domain: dev.localhost
+    subDomain: example
+```
+
+#### workspaceFolder
+
+Our development environment can contain more then one workspace (or in other words, can contain more then one project), with this option you define in which folder the tool will look for additional workspaces
+
+**Default value**: workspaces
+
+**Example**
+```yaml showLineNumbers
+config:
+  workspaceFolder: workspaces
+```
+
+#### proxy.domain
+This is the default domain for our development environment that WebDev uses to create the domains for traefik. So for example we have service defined that has a subdomain set for `mailpit`, then this will result in `mailpit.dev.localhost`, or whatever value you have set the domain to.
+
+**Default value**: dev.localhost
+
+**Example**
+```yaml showLineNumbers
+config:
+  proxy:
+    domain: dev.localhost
+```
+
+#### proxy.subdomain
+This is the default subdomain for our workspace. So when you open your browser, you can reach the system via `shop.dev.localhost` or `www.shop.dev.localhost` (The www subdomain will always be created by the tool).
+
+**Default value**: devcontainer
+
+**Example**
+```yaml showLineNumbers
+config:
+  proxy:
+    domain: shop
+```

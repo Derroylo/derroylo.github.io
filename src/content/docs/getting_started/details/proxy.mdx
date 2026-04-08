@@ -1,0 +1,110 @@
+---
+title: Proxy
+banner:
+  content: |
+    This documentation is currently being updated for the upcoming release of version 0.4. It may not yet reflect all necessary changes or new features of this version.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+## Short explaination
+
+Usually you could reach your application via `http://localhost:8080` from your browser. When using the proxy, you can use https and even define the URL under which your application is reachable, for example `https://example.dev.localhost`. Many websites have a redirect for www integrated, so `https://www.example.dev.localhost` is available too. Via `webdev.yml` you can define custom subdomains, for example for different languages or multi tenant systems.
+
+## How does it work?
+
+Most of the work is done by [traefik](https://traefik.io/traefik) which takes care of all the routing and certificate generation. So you need to make sure that the service is enabled and running. The routes that traefik will handle, are defined within the file `.devcontainer/traefik/config/dynamic.yml`. This file will be created and updated by WebDev, a file watcher from traefik will update the routing automaticly.
+
+## dynamic.yml
+
+<Aside>
+Never edit the `dynamic.yml` file manually, it will be overwritten by `WebDev`
+</Aside>
+
+```yaml showLineNumbers
+tls:
+  stores:
+    default:
+      defaultCertificate:
+        certFile: /etc/certs/_wildcard.example-project.dev.localhost.pem
+        keyFile: /etc/certs/_wildcard.example-project.dev.localhost-key.pem
+  certificates:
+    certFile: /etc/certs/_wildcard.example-project.dev.localhost.pem
+    keyFile: /etc/certs/_wildcard.example-project.dev.localhost-key.pem
+http:
+  routers:
+    traefik:
+      rule: Host(`traefik.example-project.dev.localhost`) || Host(`traefik.dev.localhost`)
+      entrypoints: https
+      tls: true
+      service: traefik
+    mailpit:
+      rule: Host(`mail.example-project.dev.localhost`) || Host(`mail.dev.localhost`)
+      entrypoints: https
+      tls: true
+      service: mailpit
+    devcontainer:
+      rule: Host(`example-project.dev.localhost`) || Host(`www.example-project.dev.localhost`) || Host(`devcontainer.dev.localhost`) || Host(`www.devcontainer.dev.localhost`) || Host(`oxid.example-project.dev.localhost`)
+      entrypoints: https
+      tls: true
+      service: devcontainer
+  services:
+    traefik:
+      loadBalancer:
+        servers:
+        - url: http://traefik:8080
+    mailpit:
+      loadBalancer:
+        servers:
+        - url: http://mailpit:8025
+    devcontainer:
+      loadBalancer:
+        servers:
+        - url: http://devcontainer:8080
+
+```
+
+This is an example of a generated `dynamic.yml`. If you want to learn more on how traefik routing is being defined, check their [Documentation](https://doc.traefik.io/traefik/reference/routing-configuration/dynamic-configuration-methods/)
+
+Within the `webdev.yml` we define the domain and the subdomain that should be used:
+
+```yaml showLineNumbers
+config:
+  proxy:
+    domain: dev.localhost
+    subDomain: devcontainer
+```
+
+The value we define in `domain` is the one we also have to add to our `hosts` file to that all trafic will be routed to our container setup. You can leave the value for `domain` empty to use the default value `dev.localhost`. The `subDomain` is per default `devcontainer` but should be changed to your project name. So if your development environment is for project xyz, then you should set that as your `subDomain` too. It is not necessary but helps to keep everything clean.
+
+Also within the `webdev.yml` we define the available services and under which subdomain they should be reachable
+
+```yaml showLineNumbers
+services:
+  traefik:
+    name: Reverse Proxy for Web Development
+    category: proxy
+    active: true
+    port: 8080
+    subDomain: traefik
+  mysql:
+    name: MySQL Server - Relational Database
+    category: database
+    active: false
+  mailpit:
+    name: Mailpit - Email Testing Tool
+    active: true
+    category: mail
+    port: 8025
+    subDomain: mail
+```
+
+In this shortened version we can see that `traefik` has the attribute `subDomain` and `port`. When these values are set (note how the service mysql has no such attributes), then we enable routing to this container. With `subDomain` we can define the subdomain for this service and with `port` the port of the service is defined.
+
+So taking everything together, traefik is now accessable via `traefik.devcontainer.dev.localhost` from our webbrowser.
+
+## SSL Certificate
+
+Since we want to replicate a production server, our application should also be available via https. Good thing that `WebDev` and `traefik` takes care of it without anything you need todo manually.
+
+On startup, `WebDev` will check if a certificate already exists for this project(they can be found under .devcontainer/traefik/certs). If not, he will create a docker container (based on `alpine/mkcert`), which will then create the wildcard certificates. In the same process, he will also create the CA Certificate, which will be placed into `~/webdev/certs/`. This can be imported into your local certificate registry, so that your browser will accept all certificates from your projects.

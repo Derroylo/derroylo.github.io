@@ -1,0 +1,121 @@
+---
+title: WebDev — Docker-based development environments
+description: "Container superpowers with zero required Docker skills: environments in minutes, multiple concurrent projects, and less time to deployment."
+template: splash
+landing: true
+---
+
+import { Image } from 'astro:assets';
+import { Swiper, SwiperWrapper, SwiperSlide, SwiperPagination, SwiperButtonPrev, SwiperButtonNext } from 'astro-swiper';
+import { Card, CardGrid, LinkButton } from '@astrojs/starlight/components';
+
+import imgHelp from '../../assets/images/webdev_help.jpg';
+import imgPhp from '../../assets/images/webdev_php.jpg';
+import imgServices from '../../assets/images/webdev_services_list.jpg';
+import imgInfo from '../../assets/images/webdev_info.jpg';
+import imgXdebug from '../../assets/images/webdev_xdebug.jpg';
+
+<div class="landing-hero">
+  <h1 id="landing-name">WebDev</h1>
+  <p class="landing-tagline">Local Development Environments for PHP based Applications using DevContainer.</p>
+  <p>WebDev extends [Dev Containers](https://containers.dev/) with a CLI so you can switch PHP and Node versions, run tasks, manage secrets, and work with multiple repos in one environment — without learning Docker.</p>
+  <div class="landing-actions">
+    <LinkButton href="/getting_started/introduction/what_is_webdev/" icon="right-arrow">
+      Get started
+    </LinkButton>
+    <LinkButton href="https://github.com/Derroylo/webdev-tool" icon="github" variant="minimal">
+      WebDev on GitHub
+    </LinkButton>
+  </div>
+</div>
+
+<div class="landing-gallery">
+  <Swiper
+    class="landing-gallery-swiper"
+    options={{
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        waitForTransition: false,
+      },
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 16,
+      pagination: { clickable: true },
+      navigation: true,
+      breakpoints: {
+        640: { slidesPerView: 1 },
+      },
+    }}
+  >
+    <SwiperWrapper>
+      <SwiperSlide>
+        <Image src={imgHelp} alt="WebDev CLI — Help" loading="eager" decoding="async" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <Image src={imgInfo} alt="WebDev CLI - Info" loading="lazy" decoding="async" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <Image src={imgServices} alt="WebDev CLI — Services list" loading="lazy" decoding="async" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <Image src={imgPhp} alt="WebDev CLI — PHP version selection" loading="lazy" decoding="async" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <Image src={imgXdebug} alt="WebDev CLI — Select xDebug Setting" loading="lazy" decoding="async" />
+      </SwiperSlide>
+    </SwiperWrapper>
+    <SwiperPagination />
+    <SwiperButtonPrev />
+    <SwiperButtonNext />
+  </Swiper>
+</div>
+
+## Features
+
+<CardGrid stagger>
+  <Card title="Simple CLI" icon="setting">
+    No need to remember shell scripts or arguments. Run `webdev` to see available commands and what they do.
+  </Card>
+  <Card title="PHP & Node versions" icon="pencil">
+    Switch PHP and Node versions with a single command. Configure versions and extensions in one place.
+  </Card>
+  <Card title="Tasks & automation" icon="add-document">
+    Define tasks that run during setup — install Composer packages, compile themes, and more.
+  </Card>
+  <Card title="Secrets" icon="seti:lock">
+    Define required secrets like auth.json for composer oder registry credentials once and use it for multiple projects.
+  </Card>
+  <Card title="Secrets & services" icon="document">
+    Activate Mailhog, PHPMyAdmin, PHPCacheAdmin, etc. without manual setup. Easily add any additional services.
+  </Card>
+  <Card title="Multiple workspaces" icon="open-book">
+    Use several repositories in one dev environment. Ideal for apps that combine CMS, custom backend, and frontend.
+  </Card>
+  <Card title="IDE-friendly" icon="right-arrow">
+    Works with VS Code, Cursor, Windsurf, and other IDEs that support Dev Containers. Open the project and go.
+  </Card>
+</CardGrid>
+
+## Who is WebDev for?
+
+- **Developers** — Focus on code, not Docker. Get a consistent stack (PHP, Node, DB, services) and switch versions or run scripts via the CLI.
+- **Teams** — Same setup everywhere. One config file defines the environment; everyone gets the same tools and versions.
+- **Dev Container users** — You already use containers.dev. WebDev adds a CLI for version switching, tasks, secrets, and multi-repo workspaces.
+
+## Available Docker Images
+
+There are different base images for various purposes. The source code for them can be found [here](https://github.com/Derroylo/devcontainer-prebuilds)
+
+| Image      | Description |
+| ----------- | ----------- |
+| ghcr.io/derroylo/devcontainer-prebuilds/php:latest      | Base image for PHP Development       |
+| ghcr.io/derroylo/devcontainer-prebuilds/symfony:latest   | Base image for Symfony Development. Includes the Symfony CLI additionally to the php image        |
+| ghcr.io/derroylo/devcontainer-prebuilds/shopware:latest   | Base image for Shopware Development. Includes the Shopware CLI additionally to the php image        |
+| ghcr.io/derroylo/devcontainer-prebuilds/oxid-1_10:latest   | Base image for Oxid Development. Uses composer 1.10.        |
+| ghcr.io/derroylo/devcontainer-prebuilds/oxid-2_2:latest   | Base image for Oxid Development. Uses composer 2.2.        |
+| ghcr.io/derroylo/devcontainer-prebuilds/oxid-2_7:latest   | Base image for Oxid Development. Uses composer 2.7.        |
+
+## Next steps
+
+[Read the docs](/getting_started/introduction/what_is_webdev/) · [CLI reference](/cli/) · [GitHub](https://github.com/derroylo/webdev-tool)

@@ -1,0 +1,29 @@
+---
+title: NodeJS
+tableOfContents:
+  minHeadingLevel: 4
+  maxHeadingLevel: 4
+slug: 0.3/reference/1webdevyml/05nodejs
+---
+
+Within this config sections you can define settings for NodeJS.
+
+The following example shows all settings that can be set and which will be explained on this page:
+
+```yaml showLineNumbers
+nodejs:
+  version: 20.0.0
+```
+
+#### version
+
+With this setting the currently active NodeJS version can be defined. If you want to change the version during runtime you can use the `webdev nodejs version` command. It will also list all available version.
+
+**Default value**: *If not defined, latest version of nodejs will be used*
+
+**Example**
+
+```yaml showLineNumbers
+nodejs:
+    version: 20.0.0
+```

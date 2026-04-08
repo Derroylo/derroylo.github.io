@@ -1,0 +1,138 @@
+/* Rest of the content */
+@import "starlight-ui-tweaks/styles";
+
+/* Landing page (splash) — product-style hero and sections */
+@layer starlight.overrides {
+  /* Only when hero is present and no sidebar (splash template) */
+  html[data-has-hero]:not([data-has-sidebar]) .hero {
+    padding-block: clamp(3rem, calc(1.5rem + 8vmin), 6rem);
+  }
+  /* Starlight default: max 20rem / 25rem — wider hero screenshot on splash */
+  html[data-has-hero]:not([data-has-sidebar]) .hero > img,
+  html[data-has-hero]:not([data-has-sidebar]) .hero > .hero-html {
+    width: min(85%, 32rem);
+  }
+  @media (min-width: 50rem) {
+    html[data-has-hero]:not([data-has-sidebar]) .hero > img,
+    html[data-has-hero]:not([data-has-sidebar]) .hero > .hero-html {
+      width: min(100%, 42rem);
+    }
+  }
+  html[data-has-hero]:not([data-has-sidebar]) .hero .copy h1 {
+    font-size: clamp(var(--sl-text-3xl), calc(0.5rem + 4vw), var(--sl-text-6xl));
+  }
+  html[data-has-hero]:not([data-has-sidebar]) .hero .tagline {
+    font-size: clamp(var(--sl-text-base), calc(0.125rem + 1.5vw), var(--sl-text-xl));
+  }
+  html[data-has-hero]:not([data-has-sidebar]) main .content-panel {
+    padding-block: clamp(2rem, 4vmin, 3.5rem);
+  }
+  html[data-has-hero]:not([data-has-sidebar]) main .content-panel .sl-container > * + * {
+    margin-top: 2.5rem;
+  }
+  html[data-has-hero]:not([data-has-sidebar]) main .content-panel h2 {
+    margin-top: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--sl-color-hairline);
+  }
+  html[data-has-hero]:not([data-has-sidebar]) main .content-panel h2:first-of-type {
+    margin-top: 0;
+  }
+
+  /* Splash homepage without Starlight hero: custom landing block + markdown */
+  html:not([data-has-sidebar]):not([data-has-hero]) main .content-panel {
+    padding-block: clamp(2rem, 4vmin, 3.5rem);
+  }
+  html:not([data-has-sidebar]):not([data-has-hero]) main .content-panel .sl-container > * + * {
+    margin-top: 2.5rem;
+  }
+  html:not([data-has-sidebar]):not([data-has-hero]) main .content-panel h2 {
+    margin-top: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--sl-color-hairline);
+  }
+  html:not([data-has-sidebar]):not([data-has-hero]) main .content-panel h2:first-of-type {
+    margin-top: 0;
+  }
+
+  /* MDX landing: hide empty first panel when PageTitle is omitted */
+  html:not([data-has-sidebar]):not([data-has-hero]) main .content-panel:first-of-type:has(> .sl-container:empty) {
+    display: none;
+  }
+
+  .landing-hero {
+    text-align: center;
+    margin-block: 0 clamp(2rem, 4vmin, 3rem);
+    padding-inline: var(--sl-content-pad-x);
+  }
+
+  .sl-markdown-content .landing-hero h1#landing-name:not(:where(.not-content *)) {
+    margin: 0;
+    font-size: 7rem !important;
+    line-height: var(--sl-line-height-headings);
+    font-weight: 600;
+    color: var(--sl-color-text-accent) !important;
+  }
+
+  .landing-tagline {
+    margin: 1rem 0 0;
+    font-size: clamp(var(--sl-text-base), calc(0.125rem + 1.5vw), var(--sl-text-xl));
+    color: var(--sl-color-gray-2);
+    max-width: 50ch;
+    margin-inline: auto;
+    display: inline;
+  }
+
+  .landing-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: clamp(1.5rem, calc(1rem + 2vw), 2rem);
+  }
+
+  .landing-gallery {
+    margin-block: 0 clamp(2.5rem, 5vmin, 3.5rem);
+    margin-inline: auto;
+  }
+
+  .landing-gallery-swiper {
+    --swiper-pagination-color: var(--sl-color-text-accent);
+    --swiper-navigation-color: var(--sl-color-white);
+    --swiper-navigation-size: 1.75rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .landing-gallery-swiper :global(.swiper-slide) {
+    height: auto;
+  }
+
+  .landing-gallery-swiper :global(.swiper-slide img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    border: 1px solid var(--sl-color-hairline);
+    box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.06), 0 8px 24px hsla(0, 0%, 0%, 0.12);
+  }
+
+  .landing-gallery-swiper :global(.swiper-button-prev),
+  .landing-gallery-swiper :global(.swiper-button-next) {
+    opacity: 0.85;
+  }
+
+  .landing-gallery-swiper :global(.swiper-button-prev::after),
+  .landing-gallery-swiper :global(.swiper-button-next::after) {
+    font-size: var(--swiper-navigation-size);
+  }
+
+  .landing-gallery-swiper :global(.swiper-pagination-bullet) {
+    background: var(--sl-color-gray-3);
+    opacity: 1;
+  }
+
+  .landing-gallery-swiper :global(.swiper-pagination-bullet-active) {
+    background: var(--sl-color-text-accent);
+  }
+}

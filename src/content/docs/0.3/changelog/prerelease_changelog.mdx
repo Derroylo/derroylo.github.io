@@ -1,0 +1,34 @@
+---
+title: Changelog for upcoming releases
+slug: 0.3/changelog/prerelease_changelog
+---
+
+## WebDev Tool - Version 0.4
+
+### Planned release date
+
+Mid march 2026
+
+### Features
+
+* Subdomains are no longer handled as label of the docker container. Instead they are written to the dynamic.yaml so that traefik can apply them instantly. Previously the container needed to be recreated if the subdomain changed.
+* Services are no longer handled via the docker-compose.proxy.yml (like name, category, description, subdomain) but rather moved to the webdev.yml to have all configs in one place.
+* Additional arguments can now be passed to the test commands
+* New Help Screen (this will be shown when you just enter webdev). It will show now only the most common used commands and will also seperate them between running on local and within the devcontainer.
+* Implemented a new admin section to administrate multiple projects and their settings.
+* The debug mode can now be enabled globally till it is disabled, making it easier to debug the whole application as this apply to all executions of webdev like subprocesses or calls via tasks.
+* Rewrote the mysql update command to list all available mysql custom images and updating multiple instances at once.
+
+## Bugfixes
+
+* When using Sub-Workspaces, secrets defined in their config wouldn´t load. This has been fixed
+* Better handling of git secrets when cloning sub workspaces
+
+## Internal
+
+* Rewrote most part to use now dependency injections, as prepreration for unit tests
+
+## Breaking changes
+
+* docker-compose.proxy.yml will no longer be needed and should be removed from the devcontainer.json
+* Changes in the webdev.yml regarding service definitions

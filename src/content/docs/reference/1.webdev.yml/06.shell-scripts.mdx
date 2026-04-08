@@ -1,0 +1,33 @@
+---
+title: Shell Scripts
+tableOfContents:
+  minHeadingLevel: 4
+  maxHeadingLevel: 4
+banner:
+  content: |
+    This documentation is currently being updated for the upcoming release of version 0.4. It may not yet reflect all necessary changes or new features of this version.
+---
+
+import { Aside, Badge } from '@astrojs/starlight/components';
+
+This tool can be extended via shell scripts, as described in the documentation. In this section these can be configured
+
+The following example shows all settings that can be set and which will be explained on this page:
+
+```yaml showLineNumbers
+shellScripts:
+  additionalDirectories:
+  - scripts
+```
+
+#### additionalDirectories
+You can define one or multiple directories that webdev will search through for shell scripts
+
+**Default value**:  *If not defined, only the directory .devcontainer/scripts will be scanned for shell scripts*
+
+**Example:**
+```yaml showLineNumbers
+shellScripts:
+  additionalDirectories:
+  - scripts2
+```

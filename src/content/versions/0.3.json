@@ -1,0 +1,159 @@
+{
+  "sidebar": [
+    {
+      "label": "Getting Started",
+      "collapsed": true,
+      "items": [
+        {
+          "label": "What is WebDev?",
+          "slug": "getting_started/introduction/what_is_webdev"
+        },
+        {
+          "label": "How does it work?",
+          "slug": "getting_started/introduction/how_does_it_work"
+        },
+        {
+          "label": "Requirements",
+          "slug": "getting_started/introduction/requirements"
+        },
+        {
+          "label": "Installation",
+          "slug": "getting_started/introduction/installation"
+        },
+        {
+          "label": "First steps",
+          "slug": "getting_started/introduction/first_steps"
+        }
+      ]
+    },
+    {
+      "label": "Setup / Configuration",
+      "collapsed": true,
+      "items": [
+        {
+          "label": "Convert existing project",
+          "slug": "getting_started/details/convert_project"
+        },
+        {
+          "label": "Proxy",
+          "slug": "getting_started/details/proxy"
+        },
+        {
+          "label": "Workspaces",
+          "slug": "getting_started/details/workspaces"
+        },
+        {
+          "label": "Tasks",
+          "slug": "getting_started/details/tasks"
+        },
+        {
+          "label": "Secrets",
+          "slug": "getting_started/details/secrets"
+        },
+        {
+          "label": "Live Database",
+          "slug": "getting_started/details/live_database"
+        },
+        {
+          "label": "Services",
+          "slug": "getting_started/details/services"
+        },
+        {
+          "label": "Tests",
+          "slug": "getting_started/details/tests"
+        }
+      ]
+    },
+    {
+      "label": "CLI",
+      "collapsed": true,
+      "items": [
+        {
+          "label": "Overview",
+          "slug": "cli"
+        },
+        {
+          "label": "Commands",
+          "collapsed": true,
+          "autogenerate": {
+            "directory": "cli/commands"
+          }
+        },
+        {
+          "label": "Custom Commands",
+          "slug": "cli/custom_commands"
+        },
+        {
+          "label": "Custom Commands Examples",
+          "collapsed": true,
+          "autogenerate": {
+            "directory": "cli/custom_commands/examples"
+          }
+        },
+        {
+          "label": "Env Variables",
+          "slug": "cli/env_variables"
+        }
+      ]
+    },
+    {
+      "label": "Reference",
+      "collapsed": true,
+      "autogenerate": {
+        "directory": "reference"
+      }
+    },
+    {
+      "label": "Changelog",
+      "collapsed": true,
+      "items": [
+        {
+          "label": "PreRelease Changelog",
+          "slug": "changelog/prerelease_changelog"
+        },
+        {
+          "label": "WebDev Tool",
+          "items": [
+            {
+              "label": "Latest Version",
+              "link": "/webdev-tool",
+              "attrs": {
+                "data-sl-changelogs-link-base": "webdev-tool",
+                "data-sl-changelogs-link-type": "latest"
+              }
+            },
+            {
+              "label": "Version History",
+              "link": "/webdev-tool",
+              "attrs": {
+                "data-sl-changelogs-link-base": "webdev-tool",
+                "data-sl-changelogs-link-type": "all"
+              }
+            }
+          ]
+        },
+        {
+          "label": "WebDev Admin",
+          "items": [
+            {
+              "label": "Latest Version",
+              "link": "/webdev-admin",
+              "attrs": {
+                "data-sl-changelogs-link-base": "webdev-admin",
+                "data-sl-changelogs-link-type": "latest"
+              }
+            },
+            {
+              "label": "Version History",
+              "link": "/webdev-admin",
+              "attrs": {
+                "data-sl-changelogs-link-base": "webdev-admin",
+                "data-sl-changelogs-link-type": "all"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

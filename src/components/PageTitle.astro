@@ -1,0 +1,12 @@
+---
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+import VersionNotice from 'starlight-versions/components/VersionNotice.astro';
+
+const data = Astro.locals.starlightRoute.entry.data as typeof Astro.locals.starlightRoute.entry.data & {
+	landing?: boolean;
+};
+const hideDefaultTitle = data.landing === true;
+---
+
+{hideDefaultTitle ? null : <Default />}
+<VersionNotice />

@@ -1,0 +1,67 @@
+---
+title: Workspaces
+tableOfContents:
+  minHeadingLevel: 3
+  maxHeadingLevel: 4
+banner:
+  content: |
+    This documentation is currently being updated for the upcoming release of version 0.4. It may not yet reflect all necessary changes or new features of this version.
+---
+
+In this section it will be explained on how to define workspaces.
+
+The following example shows all settings that can be set and which will be explained on this page:
+
+```yaml showLineNumbers
+workspaces:
+  main:
+    subDomains:
+    - test1
+    - test2
+  cms:
+    name: Test worspace
+    description: This is a test workspace for webdev
+    repository: https://github.com/Derroylo/webdev-tool.git
+    branch: main
+    folder: cms
+    docRoot: public
+    mode: vhost
+    subDomains:
+      - cms
+      - sulu
+    disableWeb: false
+```
+
+### main
+
+The workspace called `main` is your main project that you are working on. If you use that key, then only the `subDomains` and `docRoot` part will be used and all other settings will be ignored.
+
+#### name
+Defines the name of the workspace, can be left empty.
+
+#### description
+Describe the use of this workspace, can be left empty.
+
+#### repository
+If this value has been set to a valid repository URL. then `wedev` will clone the repo into the defined workspace folder.
+
+#### folder
+Defines in which subfolder the repository will be cloned into.
+
+**Default value**: `key of this workspace`
+
+#### docRoot
+Change this value to use a different docroot for your workspace application
+
+**Default value**: public
+
+#### mode
+This setting currently supports `vhost` as setting, this might change in future versions.
+
+**Default value**: vhost
+
+#### subDomains
+Define under which subdomains your applications should be reachable, when using traefik as proxy.
+
+#### disableWeb
+With this setting you can disable that this workspace should be served via apache. This could be the case when serving your app via a node server.

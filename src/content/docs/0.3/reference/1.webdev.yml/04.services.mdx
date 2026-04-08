@@ -1,0 +1,41 @@
+---
+title: Services
+tableOfContents:
+  minHeadingLevel: 4
+  maxHeadingLevel: 4
+slug: 0.3/reference/1webdevyml/04services
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+Within this config sections you can define settings for the services.
+
+The following example shows all settings that can be set and which will be explained on this page:
+
+```yaml showLineNumbers
+services:
+  active:
+  - traefik
+  - mysql
+  - mailpit
+```
+
+#### active
+
+<Aside>
+  To be able to use the proxy, so your system is reachable via `shop.example.dev.localhost`, you need to have at least traefik active.
+</Aside>
+
+This section contains the active services that should be started. This setting is used by the `webdev services start` command to start the selected services.
+
+**Default value**: *If not defined, no services will be started*
+
+**Example**
+
+```yaml showLineNumbers
+services:
+  active:
+  - traefik
+  - mysql
+  - mailpit
+```
