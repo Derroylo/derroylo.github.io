@@ -81,6 +81,7 @@ export default defineConfig({
 					collapsed: true,
                     items: [
 						{ label: 'PreRelease Changelog', slug: 'changelog/prerelease_changelog' },
+						{ label: 'Update to new version', slug: 'changelog/breaking_changes' },
 						{
 							label: 'WebDev Tool',
 							items: [

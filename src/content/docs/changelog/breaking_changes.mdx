@@ -1,0 +1,36 @@
+---
+title: Updating to a new version
+---
+
+### Updating from 0.3 to 0.4
+
+#### webdev.yml
+Within this version, it has been refactored on how services are defined. In the previous version, only the active services have been listed here while in the new version it is a combination of the status and what has been defined in the docker-compose.yml under labels. 
+
+Old Version: https://derroylo.github.io/0.3/reference/1webdevyml/04services/
+
+New Version: https://derroylo.github.io/reference/1webdevyml/04services/
+
+To summarize the needed changes, is that you can most likely copy the new version (from the link above) over the old services and change the active status of the services you need. If you have added other services, add them accordingly.
+
+#### devcontainer.json
+
+The entry for docker-compose.proxy.yml can be removed from the dockerComposeFile entry, so that that part looks like this:
+
+``` json
+"dockerComposeFile": ["docker-compose.yml"],
+```
+
+### docker-compose.yml
+
+The old labels, as seen below, can all be removed.
+
+``` yaml
+phpcacheadmin:
+    labels:
+      com.webdev.category: "tools"
+      com.webdev.name: "PhpCacheAdmin"
+      com.webdev.description: "UI for managing PHP cache systems"
+      com.webdev.proxy.subdomain: "pca"
+      com.webdev.proxy.port: "80"
+```
