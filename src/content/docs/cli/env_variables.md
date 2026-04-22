@@ -1,8 +1,5 @@
 ---
 title: Environment Variables
-banner:
-  content: |
-    The documentation is not yet completly updated for Version 0.4. This will be done within the next few days.
 ---
 
 ## Workspace folder

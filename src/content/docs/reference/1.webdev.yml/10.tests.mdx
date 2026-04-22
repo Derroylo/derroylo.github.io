@@ -3,14 +3,11 @@ title: Tests
 tableOfContents:
   minHeadingLevel: 4
   maxHeadingLevel: 4
-banner:
-  content: |
-    The documentation is not yet completly updated for Version 0.4. This will be done within the next few days.
 ---
 
 import { Badge } from '@astrojs/starlight/components';
 
-# Tests <Badge type="info" text="Since v0.3.2" />
+# Tests
 
 In this section it will be explained on how to define tests.
 
@@ -33,14 +30,14 @@ tests:
     - php -d memory_limit=1G vendor/bin/phpstan analyze -c phpstan.dist.neon
 ```
 
-#### name <Badge type="info" text="Since v0.3.2" /> <Badge variant="caution" text="required" />
+#### name <Badge variant="caution" text="required" />
 Defines the name of the Test.
 
-#### commands <Badge type="info" text="Since v0.3.2" />
+#### commands
 Define the commands that should be executed for this test.
 
-#### tests <Badge type="info" text="Since v0.3.2" />
+#### tests
 Contains a list of existing test entries that should be executed on after another.
 
-## image <Badge type="info" text="Since v0.3.2" />
+## image
 Defines the image that should used to run these commands. The default value is one of this images: [PHP-CLI-Alpine](https://github.com/Derroylo/docker-images/pkgs/container/docker-images%2Fphp-alpine). The selected PHP-Version is the currently set php-version in the webdev.yml.
